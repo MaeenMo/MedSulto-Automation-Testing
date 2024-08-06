@@ -56,8 +56,6 @@ public class EditDoctor extends PageBase{
     WebElement specialtySelect;
     @FindBy(xpath = "//div[div[text()='Select Sub speciality']]//input")
     WebElement subSpecialtySelect;
-//    @FindBy(xpath = "//div[div/div[text()='Select Sub speciality']]//span[@title='Clear all']")
-//    WebElement clearAllSubSpecialtySelect;
     @FindBy(xpath = "//div[div[text()='Select Hospital Polyclinics']]//input")
     WebElement hospitalPolyclinicsSelect;
     @FindBy(xpath = "//div[div/div[text()='Select Hospital Polyclinics']]//span[@title='Clear all']")
@@ -82,7 +80,6 @@ public class EditDoctor extends PageBase{
     // Medical Image
     @FindBy(id = "projectCoverUploads")
     WebElement medicalImageUpload;
-
     public void uploadMedicalImage(String imagePath) {
         medicalImageUpload.sendKeys(imagePath);
     }

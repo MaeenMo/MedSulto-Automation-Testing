@@ -15,28 +15,24 @@ public class MedsultoDoctors extends PageBase {
 
     @FindBy(xpath = "//h3[text()='Medsulto Doctors List']")
     WebElement homePageHeader;
-
     public String getHomePageHeader() {
         return wait.until(ExpectedConditions.visibilityOf(homePageHeader)).getText();
     }
 
     @FindBy(xpath = "//div[@id='toast-container']//span[contains(text(),'Customer') and contains(text(),'successfully')]")
     WebElement successMessage;
-
     public String getSuccessMessage() {
         return wait.until(ExpectedConditions.visibilityOf(successMessage)).getText();
     }
 
     @FindBy(xpath = "//button[text()='Add Doctor']")
     WebElement addDoctorButton;
-
     public void clickAddDoctor() {
         addDoctorButton.click();
     }
 
     @FindBy(id = "src_txt")
     WebElement searchDoctorField;
-
     public void searchDoctor(String doctorName) {
         wait.until(ExpectedConditions.visibilityOf(searchDoctorField)).click();
         searchDoctorField.sendKeys(doctorName);
@@ -44,7 +40,6 @@ public class MedsultoDoctors extends PageBase {
 
     @FindBy(id = "searchCriteria")
     WebElement searchCriteria;
-
     public void selectSearchCriteria(String criteria) {
         Select selectSearchCriteria = new Select(searchCriteria);
         selectSearchCriteria.selectByVisibleText(criteria);
@@ -52,7 +47,6 @@ public class MedsultoDoctors extends PageBase {
 
     @FindBy(xpath = "//button[text()='Search']")
     WebElement searchButton;
-
     public void clickSearch() {
         searchButton.click();
     }
