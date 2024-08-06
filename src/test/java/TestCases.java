@@ -57,10 +57,9 @@ public class TestCases extends TestBase {
     }
 
     @Test(dependsOnMethods = {"searchDoctorTest"})
-    public void viewDoctorTest() throws InterruptedException {
+    public void viewDoctorTest() {
         CustomerDetails customerDetails = new CustomerDetails(driver);
         assertEquals("Customer details", customerDetails.getCustomerDetailsHeader());
-        Thread.sleep(300);
         assertEquals("Dr. Test", customerDetails.getFullName());
         assertEquals("01010101010", customerDetails.getPhone());
         assertEquals("automation@selenium.com", customerDetails.getEmail());

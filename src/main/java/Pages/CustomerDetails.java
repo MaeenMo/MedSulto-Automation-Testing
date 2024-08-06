@@ -13,6 +13,7 @@ public class CustomerDetails extends PageBase{
     @FindBy(xpath = "//h2[text()=' Customer details']")
     WebElement customerDetailsHeader;
     public String getCustomerDetailsHeader() {
+        wait.until(e -> !fullName.getText().trim().isEmpty());
         return wait.until(ExpectedConditions.visibilityOf(customerDetailsHeader)).getText();
     }
 
